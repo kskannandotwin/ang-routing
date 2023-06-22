@@ -9,17 +9,20 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'ang-routing';
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     const obsTest$ = new Observable(observer => {
-      console.log('printed from observable');
-    }).subscribe();
+      observer.next('Returned from observable');
+    }).subscribe(value => {
+      console.log(value);
+    });
 
-    const obsTest = function() {
-      console.log('printed from function');
+    const obsTest = function () {
+      return 'Return from function';
     }
 
-    obsTest();
+    const returnData = obsTest();
+    console.log(returnData);
   }
 }
