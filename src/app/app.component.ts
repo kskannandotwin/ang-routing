@@ -25,6 +25,8 @@ export class AppComponent {
       console.log(value);
     });
 
+    obsTest$.unsubscribe();
+
     const obsTest = function () {
       return 'Return from function';
       return 'Return 2 from function';
