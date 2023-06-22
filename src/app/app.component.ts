@@ -14,12 +14,15 @@ export class AppComponent {
   ngOnInit() {
     const obsTest$ = new Observable(observer => {
       observer.next('Returned from observable');
+      observer.next('This is the second return from observable');
+      observer.next('This is the third return from observable');
     }).subscribe(value => {
       console.log(value);
     });
 
     const obsTest = function () {
       return 'Return from function';
+      return 'Return 2 from function';
     }
 
     const returnData = obsTest();
