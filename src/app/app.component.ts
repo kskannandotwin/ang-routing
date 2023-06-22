@@ -15,5 +15,11 @@ export class AppComponent {
     const obsTest$ = new Observable(observer => {
       console.log('printed from observable');
     }).subscribe();
+
+    const obsTest = function() {
+      console.log('printed from function');
+    }
+
+    obsTest();
   }
 }
