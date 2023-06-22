@@ -1,1 +1,5 @@
-<p>post-list works!</p>
+<div *ngFor="let post of posts; let index = index">
+    <h1>{{ post.title }}</h1>
+    <button [routerLink]="['/post', index]">View Content</button>
+    <hr>
+</div>
