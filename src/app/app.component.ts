@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ang-routing';
+
+  constructor() {}
+
+  ngOnInit() {
+    const obsTest$ = new Observable(observer => {
+      console.log('printed from observable');
+    }).subscribe();
+  }
 }
