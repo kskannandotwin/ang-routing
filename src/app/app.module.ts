@@ -19,7 +19,7 @@ import { SinglePostComponent } from './single-post/single-post.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'posts', component: PostListComponent },
-      { path: 'post/:id', component: SinglePostComponent }
+      { path: 'post/:id/:title', component: SinglePostComponent }
     ])
   ],
   providers: [],
