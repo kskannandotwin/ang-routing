@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -33,4 +34,16 @@ export class PostListComponent {
       content: 'Lorem ipsum and so and so paragraph testing.'
     }
   ];
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.queryParamMap.subscribe(value => {
+      console.log(value);
+      const page = value.get('page');
+      const order = value.get('orderBy');
+      console.log(page);
+      console.log(order);
+    });
+  }
 }
